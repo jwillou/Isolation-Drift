@@ -10,7 +10,9 @@
 # 'output' and a directory called 'source' that contains FunctionSourcer.R 
 # and RunSims.R. Simulations require use of strataG, which links to 
 # Structure, as well as diveRsity and adegenet packages. See package 
-# documentation for instalation instructions. 
+# documentation for instalation instructions. In some situations, the 
+# library path variable may need to be modified. This can be done in the
+# FunctionSourcer.R file.
 # 
 #
 ####################################################################
