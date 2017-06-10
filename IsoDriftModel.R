@@ -7,9 +7,9 @@
 # allele and the corresponding frequency are input into their respective 
 # variables in the same order.) A working directory must also be set, 
 # and must contain this file (IsoDriftModel.R), a directory called 
-# 'output' and a directory called 'source' that contains FunctionSourcer.R 
-# and RunSims.R. Simulations require use of strataG, which links to 
-# Structure, as well as diveRsity and adegenet packages. See package 
+# 'output' and a directory called 'source' that contains FunctionSourcer.R,
+# Advance.R, and RunSims.R. Simulations require use of strataG, which links 
+# to Structure, as well as diveRsity and adegenet packages. See package 
 # documentation for instalation instructions. In some situations, the 
 # library path variable may need to be modified. This can be done in the
 # FunctionSourcer.R file.
@@ -17,6 +17,7 @@
 #
 ####################################################################
 setwd("")
+
 directory = getwd()
 outdir    = paste(directory,"/output/",sep="")                    #directory to save model output  
 source(paste(directory, "/source/FunctionSourcer.R", sep = ''))   #source functions and set source directory
@@ -41,11 +42,12 @@ allelefreqs = list(A112freq = c(0.024,0.167,0.135,0.415,0.021,0.011,0.196,0.008,
 
 # simulation parameters
 popsize  = c(50,100,200,350,500)        # population sizes to simulate 
-simyears = 501                          # total years to run simulation
+simyears = 501                          # total years to run the isolation portion of the simulation (does not include delay)
 survival = 0.96                         # survival rate
 agecap   = seq(2, 102, 20)              # maximum age
 reps     = 100                          # replicates
 structK  = 3                            # number of K for structure analyses
 levels   = seq(0, 500, 25)              # years to run structure
+delay    = 75                           # number of years between initiation of large pop and isolation second pop
 
-RunSims(alleles, allelefreqs, popsize, simyears, survival, agecap, reps, structK, levels)
+RunSims(alleles, allelefreqs, popsize, simyears, survival, agecap, reps, structK, levels, delay)
