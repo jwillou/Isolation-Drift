@@ -16,7 +16,7 @@ Program will output 4 files for each of the population sizes simulated. Files wr
   1. dpc.csv: results of dicriminant analysis of principle components. Columns contents (in order): 
   population size, replicate number (set in IsoDriftModel.R as reps), year, maximum age allowed in 
   the simulation, proportion of individuals in source population that assigned to the source population, 
-  proporiton of individuals in sink (isolated) population that assigned to the larger source population.
+  proporiton of individuals in sink (isolated) population that did not assign to the larger source population.
   2. eva.csv: results of structure analysis. Columns contents (in order): population size, replicate 
   number, year, maximum age allowed in the simulation, penalized log likelihood for K = 1, penalized log 
   likelihood for K = 2, penalized log likelihood for K = 3.
